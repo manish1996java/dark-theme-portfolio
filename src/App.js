@@ -57,7 +57,7 @@ function App() {
                 </div>
                 <span className="scroll-text">Scroll</span>
               </div>
-              <div className="backdrop">
+              <div className="black-backdrop" style={{opacity: "80%"}}>
               </div>
               <div className="nav-and-content-wrapper">
                   <NavHeader/>
