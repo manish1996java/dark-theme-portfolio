@@ -14,6 +14,11 @@
   display: flex;
   justify-content: space-between;
 }
+@media(max-width:720px){
+  .nav-links{
+    display: none;
+  } 
+}
 .nav-links a{
   color: white;
   text-decoration: none!important;
