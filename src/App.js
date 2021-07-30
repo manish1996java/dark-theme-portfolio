@@ -38,7 +38,7 @@ function App() {
     <div>
       <div className="curser"></div>
       <div className="outer-container" >    
-        <section className="section">
+        <section id="home" className="section">
           <div className=" header-container">
               <div className="sociables">
                   <div className="icon-wrapper">
@@ -74,7 +74,7 @@ function App() {
               </div>
           </div>
         </section>
-        <section className="section section2 wide-margin">
+        <section id="about" className="section section2 wide-margin">
           <div className="section-inner-wrapper">
             <h2 className="sections-title"><span className="white-shade1-color">Research</span> <span className="light-green-color">Projects</span></h2>
             <Row justify="space-between" gutter={[12,12]}>
@@ -133,7 +133,7 @@ function App() {
           </div>
             <Divider  style={{borderColor:'#444444',borderWidth:'1'}} />
         </section>
-        <section className="section section3 wide-margin" style={{position:'relative'}}>
+        <section id="projects" className="section section3 wide-margin" style={{position:'relative'}}>
           <h2 className="back-watermark" style={{position:'absolute',left:'-600px',top:'-120px',fontSize:'111px',fontWeight:'bold',opacity:'.1',whiteSpace:'nowrap'}} ><span className="white-shade1-color">Professional</span> <span className="light-green-color">Skills</span></h2>
           <div className="section-inner-wrapper">
             <h2 className="sections-title"><span className="white-shade1-color">Professional</span> <span className="light-green-color">Skills</span></h2>
@@ -258,54 +258,49 @@ function App() {
           </div>
           <Divider  style={{borderColor:'#444444',borderWidth:'1'}} />
         </section>
-        <section className="section section4 wide-margin">
+        <section id="skills" className="section section4 wide-margin">
           <div className="section-inner-wrapper">
             <h2 className="sections-title"><span className="white-shade1-color">Extra &amp;</span> <span className="light-green-color">Skills</span></h2>
             <div className="section-inner-wrapper">
-            <div style={{borderRadius:'2px',backgroundColor:'#2D3033',padding:'20px',position:'relative',display:'flex',justifyContent:'flex-end'}}>
-              <img src="https://media.istockphoto.com/photos/setting-of-laces-on-roller-skates-picture-id597660210?k=6&m=597660210&s=612x612&w=0&h=zt2G69b3htHUKfV7288bX9SDfkeqdu5NIZ_JXbo28hs=" alt="img" style={{
-                width:"250px",
-                position:'absolute',
-                left:'31px',top:'-50px',
-                boxShadow: 'black 0px 5px 15px 0px',
-                }}/>
-                <div style={{width:"60%",color:'whitesmoke',textAlign:'left'}}>
-                  <h2>Extra</h2>
-                  <Row>
-                    <Col lg={{span:4}} sm={{span:6}}>
-                      <div>
-                        <FontAwesomeIcon size="2x" icon={faDumbbell}/>
-                        <h5>Excercise</h5>
+            <div className="extra-and-skill-wrapper">
+              <img src="https://media.istockphoto.com/photos/setting-of-laces-on-roller-skates-picture-id597660210?k=6&m=597660210&s=612x612&w=0&h=zt2G69b3htHUKfV7288bX9SDfkeqdu5NIZ_JXbo28hs=" alt="img" className="skill-wall"/>
+                <div className="text-content-wrapper">
+                  <h2 className="skill-title">Extra</h2>
+                  <Row gutter={[16,16]}>
+                    <Col xx={{span:8}} sm={{span:4}} lg={{span:6}}>
+                      <div className="icon-wrapper">
+                        <FontAwesomeIcon size="2x" className="light-green-color" icon={faDumbbell}/>
+                        <h5 className="icon-text">Excercise</h5>
                       </div>
                     </Col>
-                    <Col lg={{span:4}} sm={{span:6}}>
-                      <div>
-                        <FontAwesomeIcon size="2x" icon={faFilm}/>
-                        <h5>Movies</h5>
+                    <Col xx={{span:8}} sm={{span:4}} lg={{span:6}}>
+                    <div className="icon-wrapper">
+                        <FontAwesomeIcon size="2x" className="light-green-color" icon={faFilm}/>
+                        <h5 className="icon-text">Movies</h5>
                       </div>
                     </Col>
-                    <Col lg={{span:4}} sm={{span:6}}>
-                      <div>
-                        <FontAwesomeIcon size="2x"icon={faMusic}/>
-                        <h5>Music</h5>
+                    <Col xx={{span:8}} sm={{span:4}} lg={{span:6}}>
+                    <div className="icon-wrapper">
+                        <FontAwesomeIcon size="2x" className="light-green-color" icon={faMusic}/>
+                        <h5 className="icon-text">Music</h5>
                       </div>
                     </Col>
-                    <Col lg={{span:4}} sm={{span:6}}>
-                      <div>
-                        <FontAwesomeIcon size="2x" icon={faUtensils}/>
-                        <h5>Foodie</h5>
+                    <Col xx={{span:8}} sm={{span:4}} lg={{span:6}}>
+                    <div className="icon-wrapper">
+                        <FontAwesomeIcon size="2x" className="light-green-color" icon={faUtensils}/>
+                        <h5 className="icon-text">Foodie</h5>
                       </div>
                     </Col>
-                    <Col lg={{span:4}} sm={{span:6}}>
-                      <div>
-                        <FontAwesomeIcon size="2x" icon={faGamepad}/>
-                        <h5>Gaming</h5>
+                    <Col xx={{span:8}} sm={{span:4}} lg={{span:6}}>
+                    <div className="icon-wrapper">
+                        <FontAwesomeIcon size="2x" className="light-green-color" icon={faGamepad}/>
+                        <h5 className="icon-text">Gaming</h5>
                       </div>
                     </Col>
-                    <Col lg={{span:4}} sm={{span:6}}>
-                      <div>
-                        <FontAwesomeIcon size="2x" icon={faSkating}/>
-                        <h5>Skating</h5>
+                    <Col xx={{span:8}} sm={{span:4}} lg={{span:6}}>
+                    <div className="icon-wrapper">
+                        <FontAwesomeIcon size="2x" className="light-green-color" icon={faSkating}/>
+                        <h5 className="icon-text">Skating</h5>
                       </div>
                     </Col>
                   </Row>
@@ -315,21 +310,54 @@ function App() {
           </div>
           <Divider  style={{borderColor:'#444444',borderWidth:'1'}} />
         </section>
-        <section className="section section5 wide-margin">
+        <section id="education" className="section section5 wide-margin">
           <div className="section-inner-wrapper">
             <h2 className="sections-title"><span className="white-shade1-color">Certification</span> <span className="light-green-color"></span></h2>
+            <div>
+                <Row gutter={[16,16]}>
+                  <Col xs={{span:24}} sm={{span:12}} lg={{span:8}}>
+                    <div class="certificate-cards" style={{backgroundColor:'#2D3033',padding:'20px',minWidth:"220px"}}>
+                      <span style={{color:'white',fontSize:'18px'}}>Angular (Basic)</span>
+                    </div>
+                  </Col>
+                  <Col xs={{span:24}} sm={{span:12}} lg={{span:8}}>
+                    <div class="certificate-cards" style={{backgroundColor:'#2D3033',padding:'20px',minWidth:"220px"}}>
+                      <span style={{color:'white',fontSize:'18px'}}>Angular (Intermediate)</span>
+                    </div>
+                  </Col>
+                  <Col xs={{span:24}} sm={{span:12}} lg={{span:8}}>
+                    <div class="certificate-cards" style={{backgroundColor:'#2D3033',padding:'20px',minWidth:"220px"}}>
+                      <span style={{color:'white',fontSize:'18px'}}>JavaScript (intermediate)</span>
+                    </div>
+                  </Col>
+                  <Col xs={{span:24}} sm={{span:12}} lg={{span:8}}>
+                    <div class="certificate-cards" style={{backgroundColor:'#2D3033',padding:'20px',minWidth:"220px"}}>
+                      <span style={{color:'white',fontSize:'18px'}}>
+                        <div>java (Core)</div>
+                        <div>java (Advance)</div>
+                      </span>
+                    </div>
+                  </Col>
+                  <Col xs={{span:24}} sm={{span:12}} lg={{span:8}}>
+                    <div class="certificate-cards" style={{backgroundColor:'#2D3033',padding:'20px',minWidth:"220px"}}>
+                      <span style={{color:'white',fontSize:'18px'}}>Frontend Master &amp; UI (Basic)</span>
+                    </div>
+                  </Col>
+                </Row>
+            </div>
           </div>
           <Divider  style={{borderColor:'#444444',borderWidth:'1'}} />
         </section>
-        <section className="section section6 wide-margin">
+        <section id="extra" className="section section6 wide-margin">
           <div className="section-inner-wrapper">
             <h2 className="sections-title"><span className="white-shade1-color">Education</span> <span className="light-green-color"></span></h2>
+            
           </div>
         </section>
         <section>
-          <div style={{height:"300px",position:'relative',overflow:'hidden'}}>
-            <div style={{width:"100%",position:'absolute',left:0,top:0}}>
-                  <img src={mapImage} alt="img" style={{width:'100%',minWidth:'600px', height:'100%',objectFit:'contain',filter:'blur(1px)'}}/>
+          <div style={{height:"300px",width:"100%",position:'relative',overflow:'hidden'}}>
+            <div style={{width:"100%",height:"100%",position:'absolute',left:0,top:0}}>
+                  <img src={mapImage} alt="img" style={{width:'100%',minWidth:'600px', height:'100%',objectFit:'cover',filter:'blur(1px)'}}/>
             </div>
             <div style={{width:"100%",height:'100%',position:'absolute',left:0,top:0,backgroundColor:'black',opacity:'.7',}}>
 

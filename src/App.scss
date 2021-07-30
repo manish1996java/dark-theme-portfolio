@@ -241,6 +241,48 @@ li{
 
 
 
-.section3{
 
+.extra-and-skill-wrapper{
+  border-radius:2px;
+  background-color: $black-shade2-color;
+  padding:20px;
+  position:relative;
+  display:flex;
+  justify-content:flex-end;
+  .skill-wall{
+    width:250px;
+    position:absolute;
+    left:31px;
+    top:-50px;
+    box-shadow: black 0px 5px 15px 0px;
+  }
+  .text-content-wrapper{
+    width:60%;
+    color: $white-shade1-color;
+    text-align:left;
+  }
+  .skill-title{
+    color: $white-shade1-color;
+    margin-bottom:30px;
+  }
+  .icon-wrapper{
+
+    .icon-text{
+      margin-top: 10px;
+      color: $white-shade1-color;
+    }
+  }
+}
+
+@media(max-width:1024px) {
+  .extra-and-skill-wrapper{
+    display: block;
+    .skill-wall{
+      width: 100%;
+      position:static;
+    }
+    .skill-title{
+     margin-top: 30px;
+    }
+  }
 }
