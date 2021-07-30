@@ -1,0 +1,25 @@
+@import '../_colors.scss';
+
+.nav{
+  margin: auto;
+  width: 90%;
+  min-height: 13vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.nav-links{
+  display: flex;
+  justify-content: space-between;
+}
+.nav-links a{
+  color: white;
+  text-decoration: none!important;
+  list-style: none;
+}
+.nav-links,.logo{
+  color: white;
+  flex: 1;
+}

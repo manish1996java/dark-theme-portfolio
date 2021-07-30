@@ -1,0 +1,37 @@
+@import url('../node_modules/antd/dist/antd.css');
+@import './colors';
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.dark-green-color{
+  color: $dark-green-color;
+}
+.light-green-color{
+  color: $light-green-color;
+}
+.white-shade1-color{
+  color: $white-shade1-color;
+}
+.black-shade1-color{
+  color: $black-shade1-color;
+}
+.black-shade2-color{
+  color: $black-shade2-color;
+}
+.black-shade3-color{
+  color: $black-shade3-color;
+}
+.black-shade4-color{
+  color: $black-shade4-color;
+}

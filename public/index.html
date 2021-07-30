@@ -39,5 +39,34 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+
+      window.onload = (e)=>{
+
+        let curserElement = document.querySelector(".curser");
+        let links = document.querySelectorAll(".nav-links li a");
+        
+      
+        window.addEventListener("mousemove",(e)=>{
+            curserElement.style.top = e.pageY+'px';
+            curserElement.style.left = e.pageX+'px';
+        })
+  
+        links.forEach(link=>{
+            link.addEventListener("mouseleave",(e)=>{
+                curserElement.classList.remove('link-grow');
+                link.classList.remove('hovered-link');
+                console.log(link);
+            })
+            link.addEventListener("mouseover",(e)=>{
+                curserElement.classList.add('link-grow');
+                link.classList.add('hovered-link');
+            })
+        });
+      };
+
+
+  </script>
+
   </body>
 </html>
