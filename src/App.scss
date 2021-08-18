@@ -19,6 +19,7 @@
   position: absolute;
 }
 .header-container .bg img{
+  filter: blur(1px);
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -141,6 +142,7 @@ li{
 }
 .hovered-link{
   color: $dark-green-color!important;
+  font-weight: bold;
 }
 .front-container{
   position: relative;

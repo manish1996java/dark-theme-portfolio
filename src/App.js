@@ -5,6 +5,7 @@ import NavHeader from './containers/NavHeader';
 import eclipselogo from './eclipse.png';
 import expresslogo from './express.png';
 import angularlogo from './angular.png';
+import fargochatimg from './fargochat.png';
 import jslogo from './js.png';
 import mvvmlogo from './mvvm.png';
 import mvclogo from './mvc.png';
@@ -33,20 +34,22 @@ function App() {
   console.log('gsap',gsap);
   let logoItem = useRef(null);
 
-  let observer = useRef();
+
+  ////////
+  // let observer = useRef();
     
-  let observeElement = (element) => {
-      console.log('element',observer);
-        observer.current = new IntersectionObserver(entries => {
-          console.log('entries',entries);
-          if(entries[0].isIntersecting){
-          console.log('visible');
-          }
-        });
-      console.log('observer.current',observer);
-      observer.current.observe(element)
-    }
-  
+  // let observeElement = (element) => {
+  //     console.log('element',observer);
+  //       observer.current = new IntersectionObserver(entries => {
+  //         console.log('entries',entries);
+  //         if(entries[0].isIntersecting){
+  //         console.log('visible');
+  //         }
+  //       });
+  //     console.log('observer.current',observer);
+  //     observer.current.observe(element)
+  //   }
+  /////////
 
   
 
@@ -142,7 +145,9 @@ function App() {
                     <FontAwesomeIcon icon={faInstagram}/>
                   </div>
                   <div className="icon-wrapper">
-                    <FontAwesomeIcon icon={faLinkedinIn}/>
+                    <a href="https://www.linkedin.com/in/manishkumardev/" target="_blank" rel="noreferrer" style={{color:"inherit"}}>
+                      <FontAwesomeIcon icon={faLinkedinIn}/>
+                    </a>
                   </div>
                   <div className="icon-wrapper">
                     <FontAwesomeIcon icon={faFacebookF}/>
@@ -165,7 +170,7 @@ function App() {
                       <div className="header-content-wrapper">
                           <span className="hi">Hi.</span>
                           <div className="my-name-description"><span className="my-name-starting"> I am</span> <span  id="whoiam" className="my-name"><TypeWriter options={{strings:['Manish Kumar','Full Stack','MEAN DEV.','MERN DEV.'],autoStart:true,loop:true}}/></span></div>
-                          <p className="myself-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati exercitationem sit ipsa ipsam explicabo, veritatis rerum itaque dignissimos rem, quis corrupti non sapiente aspernatur tempora dicta officia ullam praesentium placeat?</p>
+                          <p className="myself-description">I am a MEAN, MERN Stack developer, and good JS developer. I have the ability to create good and beautiful websites Using all these technologies. And having a logical and problem-solving ability to accomplish the work efficiently.</p>
                       </div>
                   </div>
               </div>
@@ -189,8 +194,7 @@ function App() {
                   <div style={{overflowWrap:"break-word",width:'100%'}}>
                     <h4 className="proj-card-title"><span className="light-green-color">MYJOB</span><span className="white-shade1-color"> | JOB PORTAL</span></h4>
                     <h5 className="proj-cart-description black-shade4-color" >
-                      lorem lasd flasjdfls lf aslf las flas lflsdajf lsa fls alf salf lsa dflajs dlflsadjf lsa jjlfj saldf sld flsa fljsalfj saldf lsa flsa dfjdas
-                      dfalsdjf lasjdflasjlfd asljflasjfjlsaj dlfjasljflsajf lsajfls alf jlsa dfjlsaj dfljasldfjslad
+                    MYJOB Portal is built on React library with handle all errors and exceptions with all validations. I use Redux redux-thunk for data centralization or async call. I use react-router-dom for navigation in the application.
                     </h5>
                   </div>
                 </div>
@@ -204,10 +208,9 @@ function App() {
                     <img style={{minWidth:"100px",width:"100%",height:"100%",position:'absolute',objectFit:"cover",top:0,left:0 }} src={project2} alt="img"/>
                   </div>
                   <div style={{overflowWrap:"break-word",width:'100%'}}>
-                    <h4 className="proj-card-title"><span className="light-green-color">MYJOB</span><span className="white-shade1-color"> | JOB PORTAL</span></h4>
+                    <h4 className="proj-card-title"><span className="light-green-color">BOOK CAFE</span><span className="white-shade1-color"> | ONLINE BOOK PORTAL</span></h4>
                     <h5 className="proj-cart-description black-shade4-color" >
-                      lorem lasd flasjdfls lf aslf las flas lflsdajf lsa fls alf salf lsa dflajs dlflsadjf lsa jjlfj saldf sld flsa fljsalfj saldf lsa flsa dfjdas
-                      dfalsdjf lasjdflasjlfd asljflasjfjlsaj dlfjasljflsajf lsajfls alf jlsa dfjlsaj dfljasldfjslad
+                    Book Cafe is Built on MERN. fronted is build on react using all essential APIs like Formik, redux, reduxthunk, Axios, query-string, react-pdf, react-router-dom, etc. And backend is build using Nodejs with express framework with all routing handling and using the mongo db server.
                     </h5>
                   </div>
                 </div>
@@ -218,13 +221,12 @@ function App() {
               lg={{span:8}}>
                 <div className="proj-card-container" style={{maxWidth:'300px'}}>
                   <div className="proj-card" style={{display:"flex",height:"200px",position:"relative"}}>
-                    <img style={{minWidth:"100px",width:"100%",height:"100%",position:'absolute',objectFit:"cover",top:0,left:0 }} src="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__340.jpg" alt="img"/>
+                    <img style={{minWidth:"100px",width:"100%",height:"100%",position:'absolute',objectFit:"cover",top:0,left:0 }} src={fargochatimg} alt="img"/>
                   </div>
                   <div style={{overflowWrap:"break-word",width:'100%'}}>
-                    <h4 className="proj-card-title"><span className="light-green-color">MYJOB</span><span className="white-shade1-color"> | JOB PORTAL</span></h4>
+                    <h4 className="proj-card-title"><span className="light-green-color">FARGOCHAT</span><span className="white-shade1-color"> | CHAT APPLICATION</span></h4>
                     <h5 className="proj-cart-description black-shade4-color" >
-                      lorem lasd flasjdfls lf aslf las flas lflsdajf lsa fls alf salf lsa dflajs dlflsadjf lsa jjlfj saldf sld flsa fljsalfj saldf lsa flsa dfjdas
-                      dfalsdjf lasjdflasjlfd asljflasjfjlsaj dlfjasljflsajf lsajfls alf jlsa dfjlsaj dfljasldfjslad
+                    This chat app is built on Angular front-end framework and using socketIO with node js Backend and the express Framework. And for the Database, we are using a MySQL server.
                     </h5>
                   </div>
                 </div>
@@ -234,10 +236,10 @@ function App() {
             <Divider  style={{borderColor:'#444444',borderWidth:'1'}} />
         </section>
         <section id="skills" className="section section3 wide-margin" style={{position:'relative'}}>
-          <h2 className="back-watermark" style={{position:'absolute',left:'-600px',top:'12px',fontSize:'111px',fontWeight:'bold',opacity:'.1',whiteSpace:'nowrap'}} ><span className="white-shade1-color">Professional</span> <span className="light-green-color">Skills</span></h2>
+          <h2 className="back-watermark" style={{position:'absolute',left:'-600px',top:'-29px',fontSize:'111px',fontWeight:'bold',opacity:'.1',whiteSpace:'nowrap'}} ><span className="white-shade1-color">Professional</span> <span className="light-green-color">Skills</span></h2>
           <div className="section-inner-wrapper">
             <h2 className="sections-title"><span className="white-shade1-color">Professional</span> <span className="light-green-color">Skills</span></h2>
-            <Row justify="space-around" style={{marginBottom:'4rem'}}>
+            <Row justify="space-around" gutter={[16,16]} style={{marginBottom:'4rem'}}>
               <Progress type="circle" percent={60} format={(per)=>  <span className="white-shade1-color"><div >{per}%</div><div style={{fontSize:"17px"}} className="light-green-color">Backend</div></span>} width={150} strokeColor="#86C232"></Progress>
               <Progress type="circle" percent={72} format={(per)=>  <span className="white-shade1-color"><div >{per}%</div><div style={{fontSize:"17px"}} className="light-green-color">Frontend</div></span>} width={150} strokeColor="#86C232"></Progress>
               <Progress type="circle" percent={55} format={(per)=>  <span className="white-shade1-color"><div >{per}%</div><div style={{fontSize:"17px"}} className="light-green-color">Web Design</div></span>} width={150} strokeColor="#86C232"></Progress>
@@ -510,7 +512,9 @@ function App() {
 
           </div>
         </section>
-        <footer ref={observeElement}>
+        <footer 
+        // ref={observeElement}
+        >
           <div className="low-margin" style={{display:"flex",justifyContent:"space-between",alignItems:'center',padding:'2rem 0',color:'white'}}>
             <h2 style={{color:'white'}}>Dev.</h2>
             <div>Let's Work Together</div>
