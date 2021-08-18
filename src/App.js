@@ -1,3 +1,4 @@
+import {useRef,useEffect} from 'react';
 import image from './wp5521482.jpeg';
 import './App.scss';
 import NavHeader from './containers/NavHeader';
@@ -24,21 +25,117 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faDumbbell,faSkating,faFilm,faUtensils,faGamepad,faMusic,faPhoneAlt,faEnvelope,faMapMarkerAlt} from '@fortawesome/free-solid-svg-icons';
 import {faFacebookF,faLinkedinIn,faInstagram} from '@fortawesome/free-brands-svg-icons'
 import {ArrowDownOutlined} from '@ant-design/icons';
+import {gsap,TweenMax, Power3} from 'gsap';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
 
+gsap.registerPlugin(ScrollTrigger);
 function App() {
+  console.log('gsap',gsap);
+  let logoItem = useRef(null);
 
-  // let tag = document.querySelector('#whoiam');
-  // let typewriter = new TypeWriter(tag,{
-  //   loop: true,
-  //   strings:['Manish Kumar','FullStack Dev.','MEANSTACK Dev','MERNSTACK DEV'],
-  //   delay:75
-  // });
+  let observer = useRef();
+    
+  let observeElement = (element) => {
+      console.log('element',observer);
+        observer.current = new IntersectionObserver(entries => {
+          console.log('entries',entries);
+          if(entries[0].isIntersecting){
+          console.log('visible');
+          }
+        });
+      console.log('observer.current',observer);
+      observer.current.observe(element)
+    }
+  
+
+  
+
+  useEffect(() => {
+  
+    
+    gsap.from(".section2",{
+      duration:3,
+      y:'100',
+      // x:'200',
+      opacity:0,
+      ease:'ease',
+      scrollTrigger:{
+        trigger:'.section2',
+        start:'start center',
+        end:'center 90%',
+        scrub:true,
+        // markers:true,
+        toggleActions:'restart complete reverse reset'
+      }
+    })
+
+    gsap.from(".section3",{
+      duration:3,
+      y:'100',
+      // x:'-200',
+      opacity:0,
+      ease:'ease-in',
+      scrollTrigger:{
+        trigger:'.section3',
+        start:'start center',
+        end:'center 90%',
+        scrub:true,
+        // markers:true,
+        toggleActions:'restart complete reverse reset'
+      }
+    })
+
+    gsap.from(".section4",{
+      duration:3,
+      y:'100',
+      // x:'200',
+      opacity:0,
+      ease:'ease-in',
+      scrollTrigger:{
+        trigger:'.section4',
+        start:'start center',
+        end:'center 90%',
+        scrub:true,
+        // markers:true,
+        toggleActions:'restart complete reverse reset'
+      }
+    })
+    gsap.from(".section5",{
+      duration:3,
+      y:'100',
+      // x:'-200',
+      opacity:0,
+      ease:'ease-in',
+      scrollTrigger:{
+        trigger:'.section5',
+        start:'start center',
+        end:'center 90%',
+        scrub:true,
+        // markers:true,
+        toggleActions:'restart complete reverse reset'
+      }
+    })
+
+
+    TweenMax.from(
+      logoItem,
+      1,
+      {
+        opacity:0,
+        y:40,
+        ease: Power3.easeOut,
+        delay:.9
+      }
+    )
+
+    
+  }, [])
 
   return (
     <div>
       <div className="curser"></div>
       <div className="outer-container" >    
-        <section id="home" className="section">
+        <section id="about" className="section">
           <div className=" header-container">
               <div className="sociables">
                   <div className="icon-wrapper">
@@ -61,7 +158,10 @@ function App() {
               </div>
               <div className="nav-and-content-wrapper">
                   <NavHeader/>
-                  <div className="header-content">
+                  <div ref={el => {
+                    console.log('trigger ref');
+                    logoItem = el;
+                    }} className="header-content">
                       <div className="header-content-wrapper">
                           <span className="hi">Hi.</span>
                           <div className="my-name-description"><span className="my-name-starting"> I am</span> <span  id="whoiam" className="my-name"><TypeWriter options={{strings:['Manish Kumar','Full Stack','MEAN DEV.','MERN DEV.'],autoStart:true,loop:true}}/></span></div>
@@ -74,7 +174,7 @@ function App() {
               </div>
           </div>
         </section>
-        <section id="about" className="section section2 wide-margin">
+        <section id="projects" className="section section2 wide-margin">
           <div className="section-inner-wrapper">
             <h2 className="sections-title"><span className="white-shade1-color">Research</span> <span className="light-green-color">Projects</span></h2>
             <Row justify="space-between" gutter={[12,12]}>
@@ -133,8 +233,8 @@ function App() {
           </div>
             <Divider  style={{borderColor:'#444444',borderWidth:'1'}} />
         </section>
-        <section id="projects" className="section section3 wide-margin" style={{position:'relative'}}>
-          <h2 className="back-watermark" style={{position:'absolute',left:'-600px',top:'-120px',fontSize:'111px',fontWeight:'bold',opacity:'.1',whiteSpace:'nowrap'}} ><span className="white-shade1-color">Professional</span> <span className="light-green-color">Skills</span></h2>
+        <section id="skills" className="section section3 wide-margin" style={{position:'relative'}}>
+          <h2 className="back-watermark" style={{position:'absolute',left:'-600px',top:'12px',fontSize:'111px',fontWeight:'bold',opacity:'.1',whiteSpace:'nowrap'}} ><span className="white-shade1-color">Professional</span> <span className="light-green-color">Skills</span></h2>
           <div className="section-inner-wrapper">
             <h2 className="sections-title"><span className="white-shade1-color">Professional</span> <span className="light-green-color">Skills</span></h2>
             <Row justify="space-around" style={{marginBottom:'4rem'}}>
@@ -258,7 +358,7 @@ function App() {
           </div>
           <Divider  style={{borderColor:'#444444',borderWidth:'1'}} />
         </section>
-        <section id="skills" className="section section4 wide-margin">
+        <section id="extra" className="section section4 wide-margin">
           <div className="section-inner-wrapper">
             <h2 className="sections-title"><span className="white-shade1-color">Extra &amp;</span> <span className="light-green-color">Skills</span></h2>
             <div className="section-inner-wrapper">
@@ -310,37 +410,57 @@ function App() {
           </div>
           <Divider  style={{borderColor:'#444444',borderWidth:'1'}} />
         </section>
-        <section id="education" className="section section5 wide-margin">
+        <section id="certificates" className="section section5 wide-margin">
           <div className="section-inner-wrapper">
             <h2 className="sections-title"><span className="white-shade1-color">Certification</span> <span className="light-green-color"></span></h2>
             <div>
                 <Row gutter={[16,16]}>
                   <Col xs={{span:24}} sm={{span:12}} lg={{span:8}}>
-                    <div class="certificate-cards" style={{backgroundColor:'#2D3033',padding:'20px',minWidth:"220px"}}>
+                    <div className="certificate-cards">
+                      <div className="clip-effect">
+                          <h2 className="clip-text">By Hacker Rank</h2>
+                      </div>
                       <span style={{color:'white',fontSize:'18px'}}>Angular (Basic)</span>
+                      <img src={angularlogo} alt="img"/>
                     </div>
                   </Col>
                   <Col xs={{span:24}} sm={{span:12}} lg={{span:8}}>
-                    <div class="certificate-cards" style={{backgroundColor:'#2D3033',padding:'20px',minWidth:"220px"}}>
+                    <div className="certificate-cards">
+                      <div className="clip-effect">
+                          <h2 className="clip-text">By Hacker Rank</h2>
+                      </div>
                       <span style={{color:'white',fontSize:'18px'}}>Angular (Intermediate)</span>
+                      <img src={angularlogo} alt="img"/>
                     </div>
                   </Col>
                   <Col xs={{span:24}} sm={{span:12}} lg={{span:8}}>
-                    <div class="certificate-cards" style={{backgroundColor:'#2D3033',padding:'20px',minWidth:"220px"}}>
+                    <div className="certificate-cards">
+                      <div className="clip-effect">
+                        <h2 className="clip-text">By Hacker Rank</h2>
+                      </div>
                       <span style={{color:'white',fontSize:'18px'}}>JavaScript (intermediate)</span>
+                      <img src={jslogo} alt="img"/>
                     </div>
                   </Col>
                   <Col xs={{span:24}} sm={{span:12}} lg={{span:8}}>
-                    <div class="certificate-cards" style={{backgroundColor:'#2D3033',padding:'20px',minWidth:"220px"}}>
+                    <div className="certificate-cards">
+                      <div className="clip-effect">
+                        <h2 className="clip-text">By Brain Mentors</h2>
+                      </div>
                       <span style={{color:'white',fontSize:'18px'}}>
                         <div>java (Core)</div>
                         <div>java (Advance)</div>
                       </span>
+                      <img src={javalogo} alt="img"/>
                     </div>
                   </Col>
                   <Col xs={{span:24}} sm={{span:12}} lg={{span:8}}>
-                    <div class="certificate-cards" style={{backgroundColor:'#2D3033',padding:'20px',minWidth:"220px"}}>
+                    <div className="certificate-cards" style={{backgroundColor:'#2D3033',padding:'20px',minWidth:"220px"}}>
+                      <div className="clip-effect">
+                        <h2 className="clip-text">By Brain Mentors</h2>
+                      </div>
                       <span style={{color:'white',fontSize:'18px'}}>Frontend Master &amp; UI (Basic)</span>
+                      <img src={reactlogo} alt="img"/>
                     </div>
                   </Col>
                 </Row>
@@ -348,7 +468,7 @@ function App() {
           </div>
           <Divider  style={{borderColor:'#444444',borderWidth:'1'}} />
         </section>
-        <section id="extra" className="section section6 wide-margin">
+        <section id="education" className="section section6 wide-margin">
           <div className="section-inner-wrapper">
             <h2 className="sections-title"><span className="white-shade1-color">Education</span> <span className="light-green-color"></span></h2>
             
@@ -363,28 +483,34 @@ function App() {
 
             </div>
             <div style={{width:"100%",position:'absolute',left:0,top:0}}>
-              <div className="wide-margin" style={{textAlign:"center",color:'white'}}>
-                <h2 style={{marginTop:"3rem ",marginBottom:'5rem',color:'white',fontWeight:'bold',fontSize:"30px"}}>Contact Information</h2>
-                <div style={{display:"flex",justifyContent:'space-between'}}> 
-                  <div className="contact-icon-wrapper">
-                    <FontAwesomeIcon size="2x" color="#86C232" icon={faPhoneAlt}/>
-                    <span className="contact-text">+91 875 096 0833</span>
-                  </div>
-                  <div className="contact-icon-wrapper">
-                    <FontAwesomeIcon size="2x" color="#86C232" icon={faEnvelope}/>
-                    <span className="contact-text">manishkumar.1996.pj@gmail.com</span>
-                  </div>
-                  <div className="contact-icon-wrapper">
-                    <FontAwesomeIcon size="2x" color="#86C232" icon={faMapMarkerAlt}/>
-                    <span  className="contact-text">Rohini, New Delhi</span>
-                  </div>
-                </div>
+              <div className="wide-margin contact-info" >
+                <h2 className="contact-info-title">Contact Information</h2>
+                <Row className="contact-data-wrapper" justify="space-between" gutter={[10,16]}>
+                  <Col>
+                    <div className="contact-icon-wrapper">
+                      <FontAwesomeIcon size="2x" color="#86C232" icon={faPhoneAlt}/>
+                      <span className="contact-text">+91 875 096 0833</span>
+                    </div>
+                  </Col>
+                  <Col>
+                    <div className="contact-icon-wrapper">
+                      <FontAwesomeIcon size="2x" color="#86C232" icon={faEnvelope}/>
+                      <span className="contact-text">manishkumar.1996.pj@gmail.com</span>
+                    </div>
+                  </Col>
+                  <Col>
+                    <div className="contact-icon-wrapper">
+                      <FontAwesomeIcon size="2x" color="#86C232" icon={faMapMarkerAlt}/>
+                      <span  className="contact-text">Rohini, New Delhi</span>
+                    </div>
+                  </Col>
+                </Row>
               </div>
             </div>
 
           </div>
         </section>
-        <footer>
+        <footer ref={observeElement}>
           <div className="low-margin" style={{display:"flex",justifyContent:"space-between",alignItems:'center',padding:'2rem 0',color:'white'}}>
             <h2 style={{color:'white'}}>Dev.</h2>
             <div>Let's Work Together</div>
